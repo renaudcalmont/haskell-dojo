@@ -7,6 +7,7 @@ import GHC.IO.Exception (IOErrorType(TimeExpired))
 
 -- Q#01
 
+_SIZE_ :: Int
 _SIZE_ = 3
 
 -- Q#02
@@ -19,6 +20,7 @@ convertRowIndex i = fromEnum (toUpper i) - 65
 
 -- Q#04
 
+_INVALID_MOVE_ :: (Int, Int)
 _INVALID_MOVE_ = (-1, -1)
 
 -- Q#05
@@ -27,7 +29,7 @@ _SEP_ = ['_', '|', '_']
 
 -- Q#06
 
-data Square = X | O | Empty
+data Square = X | O | E
   deriving (Show, Eq)
 
 -- Q#07
@@ -71,7 +73,7 @@ switchPlayer :: Player -> Player
 switchPlayer p
  | p == X = O
  | p == O = X
- | otherwise = Empty 
+ | otherwise = E 
 
 -- Q#12
 
